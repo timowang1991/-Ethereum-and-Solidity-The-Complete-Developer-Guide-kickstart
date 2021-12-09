@@ -5,7 +5,7 @@ services:
         container_name: kickstarter
         image: nikolaik/python-nodejs:python3.5-nodejs10-alpine
         restart: always
-        # env_file: .env
+        env_file: .env
         volumes:
             - ./:/src
         working_dir: /src
