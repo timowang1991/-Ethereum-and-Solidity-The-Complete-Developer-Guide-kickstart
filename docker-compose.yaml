@@ -1,0 +1,20 @@
+version: "3.6"
+
+services:
+    kickstarter:
+        container_name: kickstarter
+        image: nikolaik/python-nodejs:python3.5-nodejs10-alpine
+        restart: always
+        # env_file: .env
+        volumes:
+            - ./:/src
+        working_dir: /src
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
+        command:
+            - /bin/sh
+            - -c
+            - |
+                npm i
+                sleep 999999999
+                npm run start
